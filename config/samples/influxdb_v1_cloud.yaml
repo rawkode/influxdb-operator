@@ -1,0 +1,19 @@
+apiVersion: influxdb.influxdata.com/v1
+kind: InfluxDB
+metadata:
+  name: influxdb-cloud
+spec:
+  provision: false
+  url: https://us-west-2-1.aws.cloud2.influxdata.com/
+  organization: f978dfb87de31ea3
+  token:
+    secretName: influxdb-cloud
+    secretKey:  admin-token
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: influxdb-cloud
+type: Opaque
+data:
+  admin-token: Y2hGRHM3NjFHc3N5T3BCMHMtZ3ZiWGFBbWV5SUVJWGZqWTVwZlpuOVVyaUhyZnk5R3dlZmhrN2VmQkluXzB2c1A5aUU2dlR4c0piMXJ4eHpxU3ZxRVE9PQ==
